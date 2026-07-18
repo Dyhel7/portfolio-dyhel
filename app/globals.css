@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f2f0e9;
+  --foreground: #171717;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #171717;
+  color: #f2f0e9;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f0e9;
+  border-left: 2px solid #171717;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #171717;
+  border: 2px solid #f2f0e9;
+}
+
+.font-mono {
+  font-family: var(--font-space-mono), monospace;
+}
+
+.fade-up {
+  animation: fade-up 700ms ease both;
+}
+
+.fade-up-delay-1 {
+  animation: fade-up 700ms 120ms ease both;
+}
+
+.fade-up-delay-2 {
+  animation: fade-up 700ms 240ms ease both;
+}
+
+.fade-up-delay-3 {
+  animation: fade-up 700ms 360ms ease both;
+}
+
+.terminal-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.project-row {
+  transition:
+    background-color 200ms ease,
+    padding-left 200ms ease,
+    padding-right 200ms ease;
+}
+
+.project-row:hover {
+  background: #ffffff;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.skill-tag {
+  transition:
+    transform 150ms ease,
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.skill-tag:hover {
+  transform: translateY(-3px);
+  background: #171717;
+  color: #ffffff;
+}
+
+.cursor {
+  display: inline-block;
+  width: 9px;
+  height: 17px;
+  background: currentColor;
+  vertical-align: middle;
+  animation: cursor-blink 1s steps(2, start) infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
