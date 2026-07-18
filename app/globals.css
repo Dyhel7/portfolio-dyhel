@@ -417,3 +417,317 @@ a {
     animation: none;
   }
 }
+/* =========================================================
+  /* =========================================================
+   SUPER PREMIUM LIGHTNING CURSOR — WINDOWS SIZE
+   ========================================================= */
+
+@media (pointer: fine) and (hover: hover) {
+  .has-custom-cursor,
+  .has-custom-cursor body,
+  .has-custom-cursor a,
+  .has-custom-cursor button,
+  .has-custom-cursor [role="button"],
+  .has-custom-cursor summary,
+  .has-custom-cursor label,
+  .has-custom-cursor input,
+  .has-custom-cursor textarea,
+  .has-custom-cursor select {
+    cursor: none !important;
+  }
+}
+
+/* Posisi cursor utama dan trailing */
+
+.premium-cursor,
+.lightning-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10020;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+}
+
+.premium-cursor {
+  transition: opacity 120ms ease;
+}
+
+.premium-cursor.is-visible,
+.lightning-trail.is-visible {
+  opacity: 1;
+}
+
+/* Petir utama — ukuran mendekati cursor Windows */
+
+.premium-cursor__inner {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  transform: translate(-4px, -3px) rotate(-5deg) scale(1);
+  transform-origin: 4px 3px;
+
+  filter:
+    drop-shadow(0 0 2px rgba(255, 255, 255, 0.8))
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.35))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.16));
+
+  transition:
+    transform 150ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 150ms ease;
+}
+
+/* Saat berada di atas link atau tombol */
+
+.premium-cursor__inner.is-hovering {
+  transform: translate(-4px, -3px) rotate(-9deg) scale(1.08);
+
+  filter:
+    drop-shadow(0 0 3px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.5))
+    drop-shadow(0 0 16px rgba(255, 255, 255, 0.22));
+}
+
+/* Saat mouse ditekan */
+
+.premium-cursor__inner.is-pressed {
+  transform: translate(-4px, -3px) rotate(-3deg) scale(0.9);
+}
+
+.premium-cursor__inner.is-hovering.is-pressed {
+  transform: translate(-4px, -3px) rotate(-6deg) scale(0.98);
+}
+
+.premium-cursor__bolt {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Percikan kecil saat hover */
+
+.premium-cursor__spark {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 7px;
+  height: 1px;
+  border-radius: 999px;
+  opacity: 0;
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+
+  transition:
+    opacity 130ms ease,
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-cursor__spark--1 {
+  transform: translate(11px, -2px) rotate(-35deg) scaleX(0.15);
+}
+
+.premium-cursor__spark--2 {
+  width: 6px;
+  transform: translate(14px, 5px) rotate(2deg) scaleX(0.15);
+}
+
+.premium-cursor__spark--3 {
+  width: 5px;
+  transform: translate(8px, -7px) rotate(72deg) scaleX(0.15);
+}
+
+.premium-cursor__inner.is-hovering .premium-cursor__spark {
+  opacity: 1;
+}
+
+.premium-cursor__inner.is-hovering .premium-cursor__spark--1 {
+  transform: translate(14px, -4px) rotate(-35deg) scaleX(1);
+}
+
+.premium-cursor__inner.is-hovering .premium-cursor__spark--2 {
+  transform: translate(17px, 6px) rotate(2deg) scaleX(1);
+}
+
+.premium-cursor__inner.is-hovering .premium-cursor__spark--3 {
+  transform: translate(10px, -10px) rotate(72deg) scaleX(1);
+}
+
+/* Dua petir bayangan di belakang cursor */
+
+.lightning-trail {
+  z-index: 10018;
+}
+
+.lightning-trail__bolt {
+  display: block;
+  transform: translate(-4px, -3px) rotate(-5deg);
+}
+
+.lightning-trail--one {
+  transition: opacity 150ms ease;
+}
+
+.lightning-trail--one .lightning-trail__bolt {
+  width: 22px;
+  height: 22px;
+  opacity: 0.18;
+
+  filter:
+    blur(0.35px)
+    drop-shadow(0 0 7px rgba(255, 255, 255, 0.25));
+}
+
+.lightning-trail--two {
+  transition: opacity 200ms ease;
+}
+
+.lightning-trail--two .lightning-trail__bolt {
+  width: 18px;
+  height: 18px;
+  opacity: 0.08;
+
+  filter:
+    blur(1px)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.18));
+}
+
+/* Efek ledakan kecil saat klik */
+
+.cursor-click-burst {
+  position: fixed;
+  z-index: 10019;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.cursor-click-burst::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  animation: cursor-burst-ring 620ms ease-out forwards;
+}
+
+.cursor-click-burst span {
+  --burst-angle: 0deg;
+
+  position: absolute;
+  top: -0.5px;
+  left: 0;
+  width: 10px;
+  height: 1px;
+  border-radius: 999px;
+  opacity: 1;
+  background: #ffffff;
+
+  box-shadow:
+    0 0 4px rgba(255, 255, 255, 0.9),
+    0 0 9px rgba(255, 255, 255, 0.4);
+
+  transform-origin: 0 50%;
+  animation: cursor-burst-ray 620ms ease-out forwards;
+}
+
+.cursor-click-burst span:nth-child(1) {
+  --burst-angle: 0deg;
+}
+
+.cursor-click-burst span:nth-child(2) {
+  --burst-angle: 45deg;
+}
+
+.cursor-click-burst span:nth-child(3) {
+  --burst-angle: 90deg;
+}
+
+.cursor-click-burst span:nth-child(4) {
+  --burst-angle: 135deg;
+}
+
+.cursor-click-burst span:nth-child(5) {
+  --burst-angle: 180deg;
+}
+
+.cursor-click-burst span:nth-child(6) {
+  --burst-angle: 225deg;
+}
+
+.cursor-click-burst span:nth-child(7) {
+  --burst-angle: 270deg;
+}
+
+.cursor-click-burst span:nth-child(8) {
+  --burst-angle: 315deg;
+}
+
+@keyframes cursor-burst-ring {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(3);
+  }
+}
+
+@keyframes cursor-burst-ray {
+  0% {
+    opacity: 1;
+    transform:
+      rotate(var(--burst-angle))
+      translateX(3px)
+      scaleX(0.25);
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      rotate(var(--burst-angle))
+      translateX(20px)
+      scaleX(1.05);
+  }
+}
+
+/* Efek magnet pada link dan tombol */
+
+.cursor-magnetic {
+  translate:
+    var(--magnetic-x, 0)
+    var(--magnetic-y, 0);
+
+  transition:
+    translate 90ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    opacity 180ms ease;
+}
+
+/* Aksesibilitas */
+
+@media (prefers-reduced-motion: reduce) {
+  .lightning-trail,
+  .cursor-click-burst {
+    display: none;
+  }
+
+  .cursor-magnetic {
+    translate: 0 0;
+  }
+
+  .premium-cursor__inner,
+  .premium-cursor__spark {
+    transition-duration: 0.01ms !important;
+  }
+}

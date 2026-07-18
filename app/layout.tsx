@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Space_Mono } from "next/font/google";
 import Intro from "./components/Intro";
+import CustomCursor from "./components/CustomCursor";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body
   className={`${spaceGrotesk.variable} ${spaceMono.variable} antialiased`}
 >
+  <CustomCursor />
   <Intro />
   {children}
 </body>
