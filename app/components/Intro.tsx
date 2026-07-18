@@ -32,7 +32,7 @@ export default function Intro() {
     let holdTimer: number | undefined;
     let exitTimer: number | undefined;
 
-    const finishIntro = (holdDuration = 850, exitDuration = 850) => {
+    const finishIntro = (holdDuration = 700, exitDuration = 1200) => {
       setPhase("hold");
 
       holdTimer = window.setTimeout(() => {
