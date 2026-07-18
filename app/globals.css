@@ -49,20 +49,20 @@ a {
   background: #ffffff;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+/* Sembunyikan scrollbar, halaman tetap bisa di-scroll */
+
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-::-webkit-scrollbar-track {
-  background: #050505;
-  border-left: 1px solid var(--line);
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
-
-::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border: 3px solid #050505;
-}
-
 .font-mono {
   font-family: var(--font-space-mono), monospace;
 }
