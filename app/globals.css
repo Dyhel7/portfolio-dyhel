@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f2f0e9;
-  --foreground: #171717;
+  --background: #050505;
+  --foreground: #f5f5f5;
+  --muted: #a3a3a3;
+  --line: rgba(255, 255, 255, 0.18);
+  --surface: rgba(255, 255, 255, 0.025);
+  --surface-hover: rgba(255, 255, 255, 0.065);
 }
 
 * {
@@ -11,11 +15,21 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
   margin: 0;
-  background: var(--background);
+  overflow-x: hidden;
+  background-color: var(--background);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
   color: var(--foreground);
   font-family: var(--font-space-grotesk), Arial, sans-serif;
 }
@@ -31,27 +45,39 @@ a {
 }
 
 ::selection {
-  background: #171717;
-  color: #f2f0e9;
+  color: #000000;
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f2f0e9;
-  border-left: 2px solid #171717;
+  background: #050505;
+  border-left: 1px solid var(--line);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #171717;
-  border: 2px solid #f2f0e9;
+  background: #ffffff;
+  border: 3px solid #050505;
 }
 
 .font-mono {
   font-family: var(--font-space-mono), monospace;
 }
+
+/* Label section seperti // RECENT_WORK */
+
+.section-label {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.75rem;
+  color: #737373;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Animasi masuk */
 
 .fade-up {
   animation: fade-up 700ms ease both;
@@ -69,38 +95,54 @@ a {
   animation: fade-up 700ms 360ms ease both;
 }
 
+/* Grid khusus terminal */
+
 .terminal-grid {
+  position: relative;
+  background-color: #050505;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    );
   background-size: 24px 24px;
 }
 
+/* Baris project */
+
 .project-row {
   transition:
-    background-color 200ms ease,
-    padding-left 200ms ease,
-    padding-right 200ms ease;
+    background-color 180ms ease,
+    padding-left 180ms ease,
+    padding-right 180ms ease;
 }
 
 .project-row:hover {
-  background: #ffffff;
-  padding-left: 18px;
   padding-right: 18px;
+  padding-left: 18px;
+  background: var(--surface-hover);
 }
+
+/* Tag skill */
 
 .skill-tag {
   transition:
-    transform 150ms ease,
-    background-color 150ms ease,
-    color 150ms ease;
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
 }
 
 .skill-tag:hover {
+  color: #000000;
+  background: #ffffff;
+  border-color: #ffffff;
   transform: translateY(-3px);
-  background: #171717;
-  color: #ffffff;
 }
+
+/* Cursor terminal */
 
 .cursor {
   display: inline-block;

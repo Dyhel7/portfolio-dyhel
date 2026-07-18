@@ -81,41 +81,56 @@ const learningLogs = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f2f0e9] text-[#171717]">
-      <header className="border-b-2 border-black">
+    <main className="min-h-screen bg-black text-white">
+      <header className="sticky top-0 z-50 border-b border-white/20 bg-black/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
-          <a href="#" className="font-mono text-lg font-black">
-            DYHEL.
-          </a>
+          <a
+  href="#"
+  className="font-mono text-lg font-black uppercase tracking-[0.2em]"
+>
+  DYHEL.
+</a>
 
           <nav className="flex gap-5 font-mono text-sm">
-  <a href="#work" className="hover:underline">
-    Work
-  </a>
+  <a
+  href="#work"
+  className="text-neutral-500 transition-colors hover:text-white"
+>
+  Work
+</a>
 
-  <a href="#experience" className="hover:underline">
-    Experience
-  </a>
+  <a
+  href="#experience"
+  className="text-neutral-500 transition-colors hover:text-white"
+>
+  Experience
+</a>
 
-  <a href="#about" className="hover:underline">
-    About
-  </a>
+  <a
+  href="#about"
+  className="text-neutral-500 transition-colors hover:text-white"
+>
+  About
+</a>
 
-  <a href="#contact" className="hover:underline">
-    Contact
-  </a>
+  <a
+  href="#contact"
+  className="text-neutral-500 transition-colors hover:text-white"
+>
+  Contact
+</a>
 </nav>
         </div>
       </header>
 
-      <section className="border-b-2 border-black">
+      <section className="border-b border-white/20">
         <div className="mx-auto max-w-6xl px-5 py-10">
-          <p className="mb-8 font-mono text-sm">
-            Month 2026 — Network Activity
-          </p>
+          <p className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">
+  // 2026_NETWORK_ACTIVITY
+</p>
 
-          <div className="overflow-hidden border-2 border-black bg-[#151515] text-white shadow-[8px_8px_0_#000]">
-            <div className="flex items-center justify-between border-b border-neutral-600 px-4 py-3 font-mono text-xs">
+          <div className="overflow-hidden border border-white/25 bg-black text-white shadow-[8px_8px_0_rgba(255,255,255,0.10)]">
+       <div className="flex items-center justify-between border-b border-white/20 bg-white/[0.035] px-4 py-3 font-mono text-xs uppercase tracking-[0.12em] text-neutral-400">
               <span>/Dyhel /portfolio — Network Operations</span>
               <span>● ● ●</span>
             </div>
@@ -138,24 +153,24 @@ export default function Home() {
                 </p>
 
                 <div className="fade-up-delay-3 mt-8 flex flex-wrap gap-4">
-                  <a
-                    href="#work"
-                    className="border-2 border-white px-5 py-3 font-mono text-sm hover:bg-white hover:text-black"
-                  >
-                    View Project
-                  </a>
+  <a
+    href="#work"
+    className="border border-white px-5 py-3 font-mono text-sm uppercase tracking-[0.12em] transition-colors hover:bg-white hover:text-black"
+  >
+    View Project
+  </a>
 
-                  <a
-                    href="#contact"
-                    className="bg-white px-5 py-3 font-mono text-sm text-black"
-                  >
-                    Contact Me
-                  </a>
-                </div>
+  <a
+    href="#contact"
+    className="bg-white px-5 py-3 font-mono text-sm uppercase tracking-[0.12em] text-black transition-opacity hover:opacity-75"
+  >
+    Contact Me
+  </a>
+</div>
               </div>
 
-              <div className="border border-neutral-600 bg-black p-5 font-mono text-sm">
-                <p className="text-green-400">welcome.asc</p>
+              <div className="border border-white/20 bg-white/[0.025] p-5 font-mono text-sm text-neutral-300">
+                <p className="text-white">welcome.asc</p>
                 <br />
                 <p>Currently busy doing:</p>
                 <br />
@@ -164,7 +179,7 @@ export default function Home() {
                 <p>- Studying GPON and FTTH</p>
                 <p>- Practicing troubleshooting</p>
                 <br />
-                <p className="mt-2 text-green-400">
+                <p className="mt-2 text-white">
   dyhel@portfolio:~$ <span className="cursor" />
 </p>
               </div>
@@ -173,12 +188,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="work" className="border-b-2 border-black">
+      <section id="work" className="border-b border-white/20">
         <div className="mx-auto max-w-6xl px-5 py-20">
-          <p className="font-mono text-sm">Recent Work</p>
+          <p className="section-label">// RECENT_WORK</p>
           <h2 className="mt-2 text-5xl font-black">Projects</h2>
 
-          <div className="mt-12 divide-y-2 divide-black border-y-2 border-black">
+          <div className="mt-12 divide-y divide-white/20 border-y border-white/20">
             {projects.map((project) => (
               <article
                  key={project.code}
@@ -199,11 +214,11 @@ export default function Home() {
                   <div className="mt-5 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
-                        key={tag}
-                        className="border border-black px-3 py-1 font-mono text-xs"
-                      >
-                        {tag}
-                      </span>
+  key={tag}
+  className="border border-white/25 bg-white/[0.025] px-3 py-1 font-mono text-xs text-neutral-300"
+>
+  {tag}
+</span>
                     ))}
                   </div>
                 </div>
@@ -213,15 +228,15 @@ export default function Home() {
         </div>
       </section>
 
-<section id="experience" className="border-b-2 border-black">
+<section id="experience" className="border-b border-white/20">
   <div className="mx-auto max-w-6xl px-5 py-20">
-    <p className="font-mono text-sm">Work Experience</p>
+    <p className="section-label">// WORK_EXPERIENCE</p>
 
     <h2 className="mt-2 text-5xl font-black">
       Experience
     </h2>
 
-    <div className="mt-12 border-y-2 border-black">
+    <div className="mt-12 border-y-2 border-white/20">
       {experiences.map((experience) => (
         <article
           key={experience.role}
@@ -229,7 +244,7 @@ export default function Home() {
         >
           <div className="font-mono text-sm">
             <p>{experience.period}</p>
-            <p className="mt-2 text-neutral-600">
+            <p className="mt-2 text-neutral-500">
               Internship
             </p>
           </div>
@@ -262,23 +277,23 @@ export default function Home() {
   </div>
 </section>
 
-<section className="border-b-2 border-black bg-white">
+<section className="border-b border-white/20 bg-black">
   <div className="mx-auto max-w-6xl px-5 py-20">
     <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
       <div>
-        <p className="font-mono text-sm">Learning Archive</p>
+        <p className="section-label">// LEARNING_ARCHIVE</p>
 
         <h2 className="mt-2 text-5xl font-black">
           What I&apos;m Learning
         </h2>
 
-        <p className="mt-6 max-w-md leading-8 text-neutral-700">
+        <p className="mt-6 max-w-md leading-8 text-neutral-400">
           Dokumentasi singkat tentang materi jaringan yang sedang saya
           pelajari selama menjalani PKL sebagai NOC Support.
         </p>
       </div>
 
-      <div className="divide-y-2 divide-black border-y-2 border-black">
+      <div className="divide-y-2 divide-white/20 border-y-2 border-white/20">
         {learningLogs.map((log) => (
           <article
             key={`${log.date}-${log.title}`}
@@ -293,7 +308,7 @@ export default function Home() {
                 {log.title}
               </h3>
 
-              <p className="mt-2 leading-7 text-neutral-700">
+              <p className="mt-2 leading-7 text-neutral-400">
                 {log.description}
               </p>
             </div>
@@ -304,10 +319,10 @@ export default function Home() {
   </div>
 </section>
 
-      <section id="about" className="border-b-2 border-black">
+      <section id="about" className="border-b border-white/20">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-2">
           <div>
-            <p className="font-mono text-sm">About Me</p>
+            <p className="section-label">// ABOUT_ME</p>
 
             <h2 className="mt-2 text-5xl font-black">
               Learning how reliable networks are built.
@@ -321,27 +336,28 @@ export default function Home() {
           </div>
 
           <div>
-            <p className="mb-5 font-mono text-sm">Networking Skills</p>
+            <p className="section-label">// NETWORKING_SKILLS</p>
 
             <div className="flex flex-wrap gap-2">
               {skills.map((skill) => (
                 <span
-                  key={skill}
-                  className="skill-tag border-2 border-black bg-white px-3 py-2 font-mono text-sm"
-                >
-                  {skill}
-                </span>
+  key={skill}
+  className="skill-tag border border-white/25 bg-white/[0.025] px-3 py-2 font-mono text-sm text-neutral-300"
+>
+  {skill}
+</span>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="bg-[#151515] text-white">
+      <section
+          id="contact"
+          className="border-t border-white/20 bg-black text-white"
+          >
         <div className="mx-auto max-w-6xl px-5 py-20">
-          <p className="font-mono text-sm text-neutral-400">
-            Contact
-          </p>
+          <p className="section-label">// INITIATE_CONNECTION</p>
 
           <h2 className="mt-3 max-w-3xl text-5xl font-black md:text-7xl">
             Let&apos;s build reliable networks.
@@ -349,27 +365,27 @@ export default function Home() {
 
           <div className="mt-10 flex flex-wrap gap-5 font-mono">
             <a
-              href="mailto:heldy@salam.net.id"
-              className="border-b border-white"
-            >
-              Email
-            </a>
+                       href="mailto:heldy@salam.net.id"
+                        className="border-b border-white/40 pb-1 font-mono text-neutral-400 transition-colors hover:border-white hover:text-white"
+                >
+                            Email
+</a>
 
             <a
-              href="https://github.com/dyhel7"
-              target="_blank"
-              rel="noreferrer"
-              className="border-b border-white"
-            >
-              GitHub
-            </a>
+  href="https://github.com/dyhel7"
+  target="_blank"
+  rel="noreferrer"
+  className="border-b border-white/40 pb-1 font-mono text-neutral-400 transition-colors hover:border-white hover:text-white"
+>
+  GitHub
+</a>
 
             <a
-              href="#"
-              className="border-b border-white"
-            >
-              LinkedIn
-            </a>
+  href="#"
+  className="border-b border-white/40 pb-1 font-mono text-neutral-400 transition-colors hover:border-white hover:text-white"
+>
+  LinkedIn
+</a>
           </div>
 
           <p className="mt-20 font-mono text-xs text-neutral-500">
