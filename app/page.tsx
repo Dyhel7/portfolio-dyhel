@@ -365,7 +365,7 @@ export default function Home() {
 
           <div className="mt-10 flex flex-wrap gap-5 font-mono">
             <a
-                       href="mailto:heldy@salam.net.id"
+                       href="mailto: heldy@salam.net.id"
                         className="border-b border-white/40 pb-1 font-mono text-neutral-400 transition-colors hover:border-white hover:text-white"
                 >
                             Email
