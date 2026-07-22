@@ -1,0 +1,608 @@
+.page {
+  --ink: #f5f5f5;
+  --muted: #9b9b9b;
+  --dim: #676767;
+  --line: rgba(255, 255, 255, 0.15);
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 80% 5%, rgba(255, 255, 255, 0.065), transparent 24%),
+    #050505;
+}
+
+.progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  height: 2px;
+}
+
+.progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.intro,
+.storySection,
+.experienceSection,
+.capabilities {
+  width: min(1240px, calc(100% - 8vw));
+  margin: 0 auto;
+}
+
+.intro {
+  padding: 155px 0 125px;
+}
+
+.introHeader > p,
+.label,
+.sectionTitle > p {
+  margin: 0;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.64rem;
+  color: var(--dim);
+  letter-spacing: 0.17em;
+}
+
+.introHeader h1 {
+  max-width: 1180px;
+  margin: 28px 0 0;
+  font-size: clamp(3.4rem, 7vw, 8.2rem);
+  font-weight: 520;
+  line-height: 0.92;
+  letter-spacing: -0.068em;
+}
+
+.introHeader h1 em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  color: #cfcfcf;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 28px;
+  margin-top: 78px;
+}
+
+.portrait,
+.introStory,
+.storyVisual,
+.skillPanel,
+.learningPanel {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #090909;
+}
+
+.portrait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 590px;
+  overflow: hidden;
+}
+
+.portraitGrid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.orbit {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: orbit 18s linear infinite;
+}
+
+.orbit::before,
+.orbit::after {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  content: "";
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.72);
+}
+
+.orbit::before {
+  top: 26px;
+  left: 86px;
+}
+
+.orbit::after {
+  right: 28px;
+  bottom: 76px;
+}
+
+.letter {
+  position: relative;
+  z-index: 2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(9rem, 18vw, 14rem);
+  font-style: italic;
+  line-height: 1;
+}
+
+.signal {
+  position: absolute;
+  right: 27%;
+  bottom: 32%;
+  z-index: 3;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 1.5rem;
+  letter-spacing: -0.22em;
+  transform: rotate(-25deg);
+}
+
+.portrait > p {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  margin: 0;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.6rem;
+  color: var(--dim);
+  letter-spacing: 0.13em;
+}
+
+.introStory {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: clamp(28px, 4vw, 54px);
+}
+
+.introStory > p:not(.label) {
+  margin: 28px 0 0;
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  line-height: 1.55;
+  color: #c6c6c6;
+}
+
+.storySection {
+  border-top: 1px solid var(--line);
+}
+
+.storyBlock {
+  display: grid;
+  grid-template-columns: 70px minmax(280px, 0.85fr) minmax(360px, 1.15fr);
+  gap: clamp(28px, 4vw, 70px);
+  align-items: center;
+  padding: 100px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.storyIndex {
+  align-self: start;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.65rem;
+  color: var(--dim);
+}
+
+.storyCopy h2 {
+  margin: 20px 0 28px;
+  font-size: clamp(2.4rem, 4.5vw, 5rem);
+  font-weight: 540;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.storyCopy > p:last-child {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+.storyVisual {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    #080808;
+  background-size: 28px 28px;
+}
+
+.topologyVisual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px;
+}
+
+.topologyVisual span {
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 50%;
+  background: #0a0a0a;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.58rem;
+}
+
+.topologyVisual i {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.consoleVisual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+.consoleVisual > div {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.7rem;
+}
+
+.consoleVisual span {
+  color: var(--dim);
+}
+
+.consoleVisual b {
+  font-weight: 400;
+}
+
+.labCenter,
+.labNodeA,
+.labNodeB,
+.labNodeC,
+.labNodeD {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 82px;
+  height: 82px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 50%;
+  background: #0a0a0a;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.56rem;
+}
+
+.labCenter {
+  top: 50%;
+  left: 50%;
+  width: 118px;
+  height: 118px;
+  transform: translate(-50%, -50%);
+}
+
+.labNodeA { top: 12%; left: 12%; }
+.labNodeB { top: 12%; right: 12%; }
+.labNodeC { bottom: 12%; left: 12%; }
+.labNodeD { right: 12%; bottom: 12%; }
+
+.labVisual::before,
+.labVisual::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 1px;
+  content: "";
+  background: rgba(255, 255, 255, 0.24);
+  transform: translate(-50%, -50%) rotate(32deg);
+}
+
+.labVisual::after {
+  transform: translate(-50%, -50%) rotate(-32deg);
+}
+
+.spareVisual {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-content: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.spareVisual span {
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.spareVisual span:hover {
+  color: #050505;
+  background: white;
+  transform: translateY(-4px);
+}
+
+.experienceSection {
+  padding: 125px 0;
+}
+
+.sectionTitle h2 {
+  max-width: 900px;
+  margin: 24px 0 60px;
+  font-size: clamp(3rem, 6vw, 7rem);
+  font-weight: 520;
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.experienceList {
+  border-top: 1px solid var(--line);
+}
+
+.experienceList article {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.35fr) minmax(250px, 0.65fr) minmax(300px, 1fr);
+  gap: 36px;
+  padding: 35px 0;
+  border-bottom: 1px solid var(--line);
+  transition:
+    padding 200ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.experienceList article:hover {
+  padding-right: 18px;
+  padding-left: 18px;
+  color: #050505;
+  background: white;
+}
+
+.experienceList article > p {
+  margin: 0;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.68rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.experienceList article:hover > p {
+  color: #4d4d4d;
+}
+
+.experienceList h3 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+}
+
+.experienceList span {
+  display: block;
+  margin-top: 7px;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.65rem;
+  color: var(--dim);
+}
+
+.capabilities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding-bottom: 130px;
+}
+
+.skillPanel,
+.learningPanel {
+  padding: clamp(26px, 3vw, 40px);
+}
+
+.skillPanel > div,
+.learningPanel > div {
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.skillPanel span,
+.learningPanel span {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+  transition:
+    padding 180ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.learningPanel span {
+  grid-template-columns: 40px 1fr;
+}
+
+.skillPanel span:hover,
+.learningPanel span:hover {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #050505;
+  background: white;
+}
+
+.skillPanel i,
+.learningPanel i {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.58rem;
+  font-style: normal;
+  color: var(--dim);
+}
+
+.skillPanel b {
+  font-weight: 400;
+  opacity: 0;
+  transform: translate(-8px, 8px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.skillPanel span:hover b {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.page [data-info-reveal] {
+  opacity: 0;
+  translate: 0 34px;
+  transition:
+    opacity 760ms cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0ms),
+    translate 760ms cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0ms);
+}
+
+.visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 980px) {
+  .introGrid,
+  .capabilities {
+    grid-template-columns: 1fr;
+  }
+
+  .storyBlock {
+    grid-template-columns: 44px 1fr;
+  }
+
+  .storyVisual {
+    grid-column: 2;
+  }
+
+  .experienceList article {
+    grid-template-columns: 130px 1fr;
+  }
+
+  .experienceList article > p:last-child {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .intro,
+  .storySection,
+  .experienceSection,
+  .capabilities {
+    width: calc(100% - 28px);
+  }
+
+  .intro {
+    padding: 115px 0 80px;
+  }
+
+  .introHeader h1 {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  .portrait {
+    min-height: 400px;
+  }
+
+  .orbit {
+    width: 240px;
+    height: 240px;
+  }
+
+  .storyBlock {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 72px 0;
+  }
+
+  .storyIndex,
+  .storyVisual {
+    grid-column: 1;
+  }
+
+  .storyVisual {
+    min-height: 340px;
+  }
+
+  .topologyVisual {
+    padding: 18px;
+  }
+
+  .topologyVisual span {
+    width: 52px;
+    height: 52px;
+    font-size: 0.42rem;
+  }
+
+  .consoleVisual {
+    padding: 24px;
+  }
+
+  .consoleVisual > div {
+    grid-template-columns: 76px 1fr;
+    font-size: 0.58rem;
+  }
+
+  .labCenter {
+    width: 92px;
+    height: 92px;
+  }
+
+  .labNodeA,
+  .labNodeB,
+  .labNodeC,
+  .labNodeD {
+    width: 62px;
+    height: 62px;
+    font-size: 0.45rem;
+  }
+
+  .experienceList article {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .experienceList article > p:last-child {
+    grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit {
+    animation: none;
+  }
+
+  .page [data-info-reveal] {
+    opacity: 1;
+    translate: 0;
+    transition: none;
+  }
+}
