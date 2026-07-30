@@ -3,6 +3,7 @@ import { Space_Grotesk, Space_Mono } from "next/font/google";
 import Intro from "./components/Intro";
 import CustomCursor from "./components/CustomCursor";
 import "./globals.css";
+import AiChat from "./components/AiChat";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -52,6 +53,7 @@ export default function RootLayout({
   <CustomCursor />
   <Intro />
   {children}
+   <AiChat />
 </body>
     </html>
   );
