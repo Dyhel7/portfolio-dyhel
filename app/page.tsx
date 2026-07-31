@@ -1,3 +1,5 @@
+import PortfolioFooter from "./components/PortfolioFooter";
+import PortfolioHeader from "./components/PortfolioHeader";
 import styles from "./page.module.css";
 
 const projects = [
@@ -31,21 +33,6 @@ const projects = [
     tags: ["RConfig", "Monitoring", "NOC"],
     visual: "monitor",
   },
-];
-
-const skills = [
-  "MikroTik RouterOS",
-  "Routing & Switching",
-  "Firewall",
-  "TCP/IP",
-  "DNS & DHCP",
-  "PPPoE",
-  "GPON",
-  "FTTH",
-  "OLT ZTE C320",
-  "Fiber Optic",
-  "RConfig",
-  "Troubleshooting",
 ];
 
 function ProjectVisual({ type }: { type: string }) {
@@ -129,26 +116,10 @@ function ProjectVisual({ type }: { type: string }) {
   );
 }
 
-export default function Home() {
+export default function WorkPage() {
   return (
     <main className={styles.page}>
-      <header className={styles.header}>
-        <a className={styles.brand} href="#top" aria-label="Kembali ke atas">
-          DYHEL.
-        </a>
-
-        <nav className={styles.nav} aria-label="Navigasi utama">
-          <a href="#selected-work">Work</a>
-          <a href="#info">Info</a>
-        </nav>
-
-        <aside className={styles.headerLinks}>
-          <a href="https://github.com/dyhel7" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          <a href="mailto:heldy@salam.net.id">Email</a>
-        </aside>
-      </header>
+      <PortfolioHeader active="work" />
 
       <section id="top" className={styles.heroSection}>
         <article className={styles.browserFrame}>
@@ -158,7 +129,7 @@ export default function Home() {
               <span />
               <span />
             </div>
-            <p>dyhel.my.id — portfolio</p>
+            <p>dyhel.my.id — work</p>
             <span className={styles.browserStatus}>ONLINE</span>
           </div>
 
@@ -235,63 +206,7 @@ export default function Home() {
         </article>
       </section>
 
-      <section id="info" className={styles.infoSection}>
-        <article className={styles.sectionShell}>
-          <div className={styles.infoLead}>
-            <p className={styles.eyebrow}>ABOUT / CURRENTLY</p>
-            <h2>
-              I&apos;m passionate about building infrastructure that{" "}
-              <em>keeps people connected.</em>
-            </h2>
-          </div>
-
-          <div className={styles.infoGrid}>
-            <article className={styles.profileCard}>
-              <div className={styles.profileVisual} aria-hidden="true">
-                <span className={styles.profileLetter}>D</span>
-                <span className={styles.profileSignal}>)))</span>
-              </div>
-              <p>
-                Fresh Graduate Politeknik Negeri Samarinda dan saat ini bekerja
-                sebagai NOC Support. Saya memperdalam monitoring,
-                troubleshooting, MikroTik, GPON, FTTH, serta pengoperasian OLT
-                ZTE C320.
-              </p>
-            </article>
-
-            <article className={styles.skillsCard}>
-              <p className={styles.cardLabel}>CURRENT STACK</p>
-              <div className={styles.skillList}>
-                {skills.map((skill, index) => (
-                  <div key={skill}>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <p>{skill}</p>
-                  </div>
-                ))}
-              </div>
-            </article>
-          </div>
-        </article>
-      </section>
-
-      <footer className={styles.footer}>
-        <div>
-          <p className={styles.cardLabel}>CONTACT</p>
-          <h2>Let&apos;s build a reliable network.</h2>
-        </div>
-
-        <div className={styles.footerLinks}>
-          <a href="mailto:heldy@salam.net.id">Email ↗</a>
-          <a href="https://github.com/dyhel7" target="_blank" rel="noreferrer">
-            GitHub ↗
-          </a>
-        </div>
-
-        <div className={styles.footerBottom}>
-          <p>© 2026 Dyhel</p>
-          <a href="#top">Back to top ↑</a>
-        </div>
-      </footer>
+      <PortfolioFooter nextPage="info" />
     </main>
   );
 }
